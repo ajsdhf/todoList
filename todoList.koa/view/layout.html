@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}koajs{% endblock %} - the next web framework</title>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/todoList.css" type="text/css" />
+
+    <script charset="utf-8" id="seajsnode" src="https://a.alipayobjects.com/??seajs/seajs/2.1.1/sea.js"></script>
+    <script>
+        seajs.config({
+            alias: {
+                '$': 'jquery/jquery/1.7.2/jquery'
+            },
+            vars: {
+                locale: 'zh-cn'
+            }
+        });
+    </script>
+    <script src="/js/angularjs/angular.min.js"></script>
+    <script src="/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script>
+        var myAppModule = angular.module('myApp', ['ui.bootstrap']);
+    </script>
+</head>
+<body>
+<div ng-app="myApp"  id="J-index" class="index_bg">
+    <div class="index-nav">
+        <div class="container">
+            <a class="index_logo" href="/"></a>
+            <a class="nav-menu pull-right" href="/auth/login">登陆</a>
+            <a class="nav-menu pull-right" href="/auth/register">注册</a>
+        </div>
+    </div>
+    <div class="main wrap cobox">
+        {% block content %}
+        <p>找不到相应的内容</p>
+        {% endblock %}
+    </div>
+</div>
+<script>
+    seajs.use('$',function($){
+        $('#J-index').height(Math.max ($(window).height(),674) );
+    })
+</script>
+
+</body>
+</html>

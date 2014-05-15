@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}koajs{% endblock %} - the next web framework</title>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/todoList.css" type="text/css" />
+
+    <script charset="utf-8" id="seajsnode" src="https://a.alipayobjects.com/??seajs/seajs/2.1.1/sea.js"></script>
+    <script>
+        seajs.config({
+            alias: {
+                '$': 'jquery/jquery/1.7.2/jquery'
+            },
+            vars: {
+                locale: 'zh-cn'
+            }
+        });
+    </script>
+    <script src="/js/angularjs/angular.min.js"></script>
+    <script src="/js/ui-bootstrap-tpls-0.11.0.js"></script>
+</head>
+<body>
+    <div class="main wrap cobox">
+        {% block content %}
+        <p>找不到相应的内容</p>
+        {% endblock %}
+    </div>
+<script>
+    seajs.use('$',function($){
+        window.console && console.log($);
+    })
+</script>
+
+</body>
+</html>

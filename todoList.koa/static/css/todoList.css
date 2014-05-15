@@ -1,0 +1,42 @@
+.index_bg{
+    background: url("/image/index-bg.jpg") bottom center no-repeat;
+    position: relative;
+}
+.index_logo{
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    background: url("/image/index-logo.png")  no-repeat;
+}
+.start_now{
+    position: absolute;
+    left: 50%;
+    float: left;
+    margin-left: -90px;
+    top: 400px;
+}
+.start_now .start_now-btn{
+    color: #fff;
+    font-size: 36px;
+}
+.start_now .start_now-btn:hover{
+    text-decoration: none;
+}
+
+.index-nav{
+    background: #101010;
+    opacity: 0.5;
+    height: 40px;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.nav-menu{
+    padding: 10px;
+    color: #fff;
+}
+.loginForm{
+    width: 400px;
+    margin: auto;
+    padding-top: 200px
+}
