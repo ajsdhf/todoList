@@ -91,11 +91,12 @@ module.exports = function(module,app,route,parse,render){
                     id:member._id,
                     username:member.username,
                     email:member.email,
-                    status:member.status,
+                    status:member.status
                 }
                 G.user = cookiemember;
-                cookiemember = JSON.stringify(cookiemember);
-                this.cookies.set('member', cookiemember,{ signed: true });
+                var cookieString = JSON.stringify(cookiemember);
+                console.log(typeof cookieString);
+                this.cookies.set('member', cookieString,{ signed: true });
                 this.body = yield F.msg('注册成功','/');
             }
 

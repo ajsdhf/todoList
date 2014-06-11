@@ -13,6 +13,7 @@ var koa = require('koa'),
     swig = require('swig'),
     app = koa(),
     path = require('path'),
+    KeyGrip = require('KeyGrip'),
     co = require('co'),
     parse = require('co-body'),
     views = require('co-views'),
@@ -50,7 +51,8 @@ M.mongoose = mongoose;
 M.mongoose.connect(C.mongo);
 D = require(C.model+'db');
 //密钥
-app.keys = [C.secret];
+//app.keys = [C.secret];
+app.keys = new KeyGrip(['im a newer secret', 'i like turtle'], 'sha256');
 //全局函数
 app.use(function *(next){
 

@@ -10,6 +10,7 @@ function D(obj) {
 
     o.insert = function(data, callback) {
         var d = new o(data);
+
         d.save(function(err) {
           callback(err,d);
         });
@@ -17,8 +18,5 @@ function D(obj) {
 
     return o;
 }
-
-
-
 
 module.exports = D;
