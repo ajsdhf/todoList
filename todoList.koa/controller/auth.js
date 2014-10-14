@@ -95,7 +95,6 @@ module.exports = function(module,app,route,parse,render){
                 }
                 G.user = cookiemember;
                 var cookieString = JSON.stringify(cookiemember);
-                console.log(typeof cookieString);
                 this.cookies.set('member', cookieString,{ signed: true });
                 this.body = yield F.msg('注册成功','/');
             }

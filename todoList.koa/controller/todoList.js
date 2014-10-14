@@ -3,19 +3,26 @@
  */
 
 module.exports = function(module,app,route,parse,render){
-    app.use(route.get('/', list));
+    app.use(route.get('/', todo));
+    app.use(route.get('/today', today));
 
-    function *list(tag) {
 
-        console.log(G.user);
+
+    //主页框架
+    function *todo() {
+        //console.log(G.user);
         if(G.user && G.user.id){
-            
-
-            this.body = yield render('todolist/index',{});
+            this.body = yield render('/todolist/todo');
         }
 
-        this.body = yield render('index',{});
+        else this.body = yield render('/auth/login',{});
     }
 
+    //今天
+    function *today(){
 
+        var query = this.request.query;
+
+        this.body = {data:'test'};
+    }
 }
